@@ -4,6 +4,10 @@ public class Coin {
     private int color;
     private int position;
 
+    public Coin(int color) {
+        this.color = color;
+    }
+
     public int getColor() {
         return color;
     }

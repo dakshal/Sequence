@@ -36,4 +36,8 @@ public class BoardCard extends Card {
     public void setCard(Card card) {
         this.card = card;
     }
+
+    public boolean isJack() {
+        return jack;
+    }
 }
