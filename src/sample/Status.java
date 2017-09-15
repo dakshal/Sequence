@@ -12,7 +12,7 @@ public class Status {
             for (int j = 0; j < 6; j++) {
 
                 for (int k = 0; k < 5; k++) {
-                    if (game[i][j + k].getCoin() == null) {
+                    if (game[i][j + k].getCoin() == null || game[i + 1][j + k].getCoin() == null || game[i + 2][j + k].getCoin() == null || game[i + 3][j + k].getCoin() == null || game[i + 4][j + k].getCoin() == null) {
                         continue;
                     }
                     int color = game[i][j + k].getCoin().getColor();
@@ -22,7 +22,7 @@ public class Status {
                 }
 
                 for (int k = 0; k < 5; k++) {
-                    if (game[i + k][j].getCoin() == null) {
+                    if (game[i + k][j].getCoin() == null || game[i + k][j + 1].getCoin() == null || game[i + k][j + 2].getCoin() == null || game[i + k][j + 3].getCoin() == null || game[i + k][j + 4].getCoin() == null) {
                         continue;
                     }
                     int color = game[i + k][j].getCoin().getColor();
@@ -31,14 +31,14 @@ public class Status {
                     }
                 }
 
-                if (game[i][j].getCoin() != null) {
+                if (game[i][j].getCoin() != null && game[i + 1][j + 1].getCoin() != null && game[i + 2][j + 2].getCoin() != null && game[i + 3][j + 3].getCoin() != null && game[i + 4][j + 4].getCoin() != null) {
                     int color = game[i][j].getCoin().getColor();
                     if (game[i + 1][j + 1].getCoin().getColor() == color && game[i + 2][j + 2].getCoin().getColor() == color && game[i + 3][j + 3].getCoin().getColor() == color && game[i + 4][j + 4].getCoin().getColor() == color) {
                         score[color] += 1;
                     }
                 }
 
-                if (game[i][j + 4].getCoin() != null) {
+                if (game[i][j + 4].getCoin() != null && game[i+1][j+3].getCoin() != null && game[i+2][j+2].getCoin() != null && game[i+3][j+1].getCoin() != null && game[i+4][j].getCoin() != null) {
                     int color = game[i][j + 4].getCoin().getColor();
                     if (game[i + 1][j + 3].getCoin().getColor() == color && game[i + 2][j + 2].getCoin().getColor() == color && game[i + 3][j + 1].getCoin().getColor() == color && game[i + 4][j].getCoin().getColor() == color) {
                         score[color] += 1;

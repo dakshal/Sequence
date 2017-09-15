@@ -45,8 +45,13 @@ public class Main {
                     int y = sc.nextInt();
 
                     if(board.assignCard(player.getCards().get(card_pos-1), x, y, new Coin(player.getCoin().getColor()))){
-                        player.getCards().remove(card_pos);
+                        player.getCards().remove(card_pos-1);
                         player.getCards().add(deck.getShuffledCard());
+//                        ArrayList<Card> cards = player.getCards();
+//                        cards.remove(card_pos-1);
+//                        cards.add(deck.getShuffledCard());
+//                        System.out.println("cards:- "+cards.size());
+//                        player.setCards(cards);
                     } else {
                         System.out.println("that is invalid input\nPlease provide valid position and valid card");
                         i--;
